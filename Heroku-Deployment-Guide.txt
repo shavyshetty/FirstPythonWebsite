@@ -1,7 +1,26 @@
-SignUp and Create and account on heroku
-Download and the Heroku Toolbelt
-Once done, open command prompt and login to Heroku using: heroku login
-Entern your creds and you should be able to get in
-Create new app: heroku create <app_name>
-in your local installation, the virtual environment you created seperately for your app, install gunicorn: pip install gunicorn
-Gunicorn is an HTTP server
+- SignUp and Create and account on heroku
+- Download and the Heroku Toolbelt
+- Once done, open command prompt and login to Heroku using: heroku login
+- Entern your creds and you should be able to get in
+- Create new app: heroku create <app_name>
+- in your local installation, the virtual environment you created seperately for your app, install gunicorn: pip install gunicorn
+- Gunicorn is an HTTP server
+- Heroku needs the below 3 files for the app to run:
+-     1- requirements.txt: details of python env, find using "pip freeze > requirements.txt"
+-     2- Procfile: Tells Heroku what web server to use to run your application
+-               Add the line: "web:gunicorn script:app" here, script is our python code (script.py) and app is the name of the variable holding the flask instance (Procfile and the script should be in the same folder)
+-     3- runtime.txt: python version that you want heroku to run your app with. (if not specified, it will run with some default version, currently 2.7)
+-                     add the line "python-3.6.0"
+- Open your computer terminal/command line to point to the directory where the Python file containing your app code is located.
+- Using the terminal, log in to Heroku with "heroku login"
+- Enter your Heroku email address
+- Enter your Heroku password
+- Create a new Heroku app with "heroku create <app_name>"
+- Initialize a local git repository with "git init"
+- Add your local application files to git with "git add ."
+- Tell git your email address with "git config --global user.email "<email_id>"". Make sure the email address is inside quotes here.
+- Tell git your username (just pick whatever username) with "config --global user.name "<username>"". The username should be in quotes.
+- Commit the changes with "git commit -m "first commit"". Make sure "first commit" is inside quotes.
+- Before pushing the changes to Heroku, tell heroku the name of the app you want to use with heroku "git:remote --app <app_name>"
+- Push the changes to Heroku with "git push heroku master"
+- That should do it. Go ahead and open your app with "heroku open".
