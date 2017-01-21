@@ -1,0 +1,7 @@
+SignUp and Create and account on heroku
+Download and the Heroku Toolbelt
+Once done, open command prompt and login to Heroku using: heroku login
+Entern your creds and you should be able to get in
+Create new app: heroku create <app_name>
+in your local installation, the virtual environment you created seperately for your app, install gunicorn: pip install gunicorn
+Gunicorn is an HTTP server
